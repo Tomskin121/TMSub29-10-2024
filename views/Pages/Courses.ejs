@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden height100">
+    <%- include('../partials/banner'); %>
+
+
+    <%if (userinfo.userlevel == "Admin\r") {%>
+        <input class = " block overlayinputinputbutton anchorbutton" id = "MagazineAdmin" type="Button" value="Admin">
+        <%  }%>
+
+
+
+          
+        <div class = "width100 height10 block flexcentralalign">
+            <h1 class = "block width100 textaligncenter smalllinehight" > Courses</h1>
+            <p class = "block width100 textaligncenter smalllinehight" > Browse our Courses</p>
+        </div>
+        <div id ="ContentContainer" class = "flex  rowgapsmall flexcentral width90 height100  wrap ">
+            <% EventList.forEach((Event) => {  %>   
+  
+     <div class ="width45 height30 rowgapsmall margin0 flex colorSecondary dropshadow">
+
+        <div class = "width40 height100 block colorPrimary"></div>
+
+
+        <div class = "width60 height100  flexcentral flex flexcolumn">
+
+            <h1 class = "width90 block height20 colorSecondary textaligncenter courseTitle"><%=Event.CourseName%></h1>
+            <p class = "courseRef"> <%=Event.Course_InstanceID%></p>
+            <h3 class = "margin0 width90 block height20 colorSecondary textaligncenter"><%=Event.Date%> <%=Event.StartTime%> </h3>
+           <p class = "width90 block height60 textaligncenter coursedesc"> <%=Event.Course_Description%></p>
+
+
+           <div class = "flex width100 height30 marginbottom flex-end ">
+<div class ="width60 height100">
+    <p class = "width50 block height30 textalignright "> Child £<%=Event.Course_ChildPrice%></p>
+    <p class = "width50 block height30 textalignright "> Adult £<%=Event.Course_AdultPrice%></p>
+    <p class = "width50 block height30 textalignright "> Concession £<%=Event.Course_ConcessionPrice%></p>
+</div>
+
+            <input class = "margintop5 width40 height60 block overlayinputinputbutton position-relative marginright5 courseinfo" id = "addview" type="Button" value="More info">
+            </div>
+
+
+        </div>
+     </div>  
+     
+     <% }) %> 
+        </div>
+<script src="JS/courseinfo.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

@@ -1,0 +1,44 @@
+
+
+<div class = "width100 height20 flex colorPrimary block  " >
+    <div id="logocontainer" class="width20 height100 flex ">
+        <img class= " justifycentral fitimage block blockcentral marginauto" src="/assets/Logo.png" alt="">
+    </div>
+    <div  class="width80 height100 block blockcentral">
+    <div class = "flex width100 height100 flexcolumn rowgapsmall">
+<div class = "block width100 height80 ">
+    <ul class = "flex width100 height20 colgapsmall marginright5 flex-end"> 
+        <% if (userinfo.isloggedin == true) {%>
+
+            <li class="height100 flex flexcentralalign textaligncenter  "><p class=" navitemtextname  textcolorprimary ">Hello <%=userinfo.user%>! </p > </li>
+            <li class="height100 flex flexcentralalign textaligncenter  "><a class="navitem navitemtext textcolorprimary"  href="/account" onclick="toggleburger(this)" > Account 
+             </a></li>
+            <li class="height100 flex flexcentralalign textaligncenter marginright5"><a class="navitem navitemtext textcolorprimary"  href="#welcome" onclick="toggleburger(this)" 
+                > Log out  </a></li>
+
+    <%}
+    else{%>
+        <li class=" height100 block textaligncenter marginright5"><a class="navitem navitemtext textcolorprimary"  href="/login" onclick="toggleburger(this)" > Log In  </a></li>
+        <%}%>
+
+             </ul>
+</div>     
+<nav class = "block width100 height20 margin0 sticky ">
+    <ul class = "flex width60 height100 colgapsmall margin0"> 
+        <li class="width20 height100 block textaligncenter"> <a class="navitem navitemtext textcolorprimary"  href="/home" onclick="toggleburger(this)" > Home  </a></li>
+        <li class="width20 height100 block textaligncenter"><a class="navitem navitemtext textcolorprimary"  href="/Books" onclick="toggleburger(this)" > Books  </a></li>
+        <li class="width20 height100 block textaligncenter"><a class="navitem textcolorprimary navitemtext"  href="/magazines" onclick="toggleburger(this)" > Magazines  </a></li>
+        <li class="width20 height100 block textaligncenter"><a class="navitem textcolorprimary navitemtext"  href="/events" onclick="toggleburger(this)" > Events  </a></li>
+        <li class="width20 height100 block textaligncenter"><a class="navitem textcolorprimary navitemtext"  href="/geneaology" onclick="toggleburger(this)" > Geneology  </a></li>
+    </ul>
+</nav>
+</div>
+    </div>
+</div>
+
+
+
+
+
+
+

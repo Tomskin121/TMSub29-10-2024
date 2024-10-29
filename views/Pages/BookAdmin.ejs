@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden ">
+    <%- include('../partials/banner'); %>
+
+    
+
+        <div class = "width100 height10 block flexcentralalign">
+            <h1 class = "block width100 textaligncenter smalllinehight" > <%= subject%> Administration</h1>
+            <p class = "block width100 textaligncenter smalllinehight" > </p>
+        </div>
+
+
+<div class = "width100 flex height150 colgapsmall justifycentral ">
+
+<div class = "textcolorprimary width60  height90   flex justifycentral  ">
+
+<form class = "colorSecondary width90   block ">
+
+
+
+
+    <div class = "width100 ">
+            <h3  class = "colorPrimary width100">  </h3>    
+            
+            <div class="width90 height40 position-relative no-wrap flex  colgapsmall flexcentralalign ">
+       
+     
+                <label class="radio block position-relative width40 height100 textaligncenter">
+                    <input class = "edititem width100 height100 displaynone flex radioselector" type="radio" name="edititem" checked value = 1 >
+                    <p class="content  width90 height100">  <strong>Update</strong></p>
+                  </label>
+              
+                  <label class="radio block position-relative width40 height100 textaligncenter">
+                      <input class = "edititem width100 height100 displaynone flex radioselector" type="radio" name="edititem" value = 2 >
+                      <p class="content  width90 height100">  <strong>New </strong> <br/></p>
+                    </label>
+             </div>
+            </div>
+
+            <div class = " subjectdropdown width100 flex flexcentralalign flexcolumn">
+                <div class="input-wrapper width80 height30">
+                    <label class = "zindex102" for="UserName"></label><br>
+                    <select class = "overlayinputText width100 zindex101" name="subjectdropdown" id="subjectdropdown">
+                        <option value="none" disabled selected> Choose an <%= subject%></option>
+                       
+                        
+                     
+                        <%  subjectlist.forEach((val) => { 
+                          
+                            
+                            var keys = Object.keys(val)
+                        
+                                                        %>
+
+                        
+                                <option value="<%= val[keys[0]] %>"> <%= val[keys[1]]%> <%= val[keys[2]] %> </option> 
+                              
+                            
+
+                                <%   })%>
+                      </select>
+                </div>    
+
+</div>
+
+<div  class = "fieldcontainer width100">
+<% 
+
+for (var i = 0; i < columns.length; i++) {
+    for (var key in columns[i]) { 
+        console.log(columns[i][key])
+        if(columns[i][key] == "Author_ID"){%>
+
+            <div class = " width100 flex flexcentralalign flexcolumn">
+                <div class="input-wrapper width80 height30">
+                    <label class = "zindex102" for="Authordropdown">Author</label><br>
+                    <select class = "overlayinputText width100 zindex101" name="Authordropdown" id="<%=columns[i][key]%>">
+                        <option value="none" disabled selected> Choose an Author</option>
+                        <%  authorlist.forEach((val) => { 
+                            var keys = Object.keys(val)  %>
+                                                      
+                                <option value="<%= val[keys[0]] %>"  > <%= val[keys[1]]%> <%= val[keys[2]] %> </option> 
+                              
+                            
+
+                                <%   })%>
+                      </select>
+                </div>    
+
+</div>
+<%    }
+
+
+else if(columns[i][key] == "publisher"){%>
+
+    <div class = " width100 flex flexcentralalign flexcolumn">
+        <div class="input-wrapper width80 height30">
+            <label class = "zindex102" for="Authordropdown">Author</label><br>
+            <select class = "overlayinputText width100 zindex101" name="Authordropdown" id="<%=columns[i][key]%>">
+                <option value="none" disabled selected> Choose a publisher</option>
+                <%  publisherlist.forEach((val) => { 
+                    var keys = Object.keys(val)  %>
+                                              
+                        <option value="<%= val[keys[0]] %>"  > <%= val[keys[1]]%> <%= val[keys[2]] %> </option> 
+                      
+                    
+
+                        <%   })%>
+              </select>
+        </div>    
+
+</div>
+<%    }
+        else{
+
+       
+        %>
+       
+        
+        
+            <div class="input-wrapper width80 height33 block">
+                <label class =" textcolorsecondary" for="<%=columns[i][key]%>%> "><%=columns[i][key]%></label><br>
+                <input  class="overlayinputText height100 width100" type="text" id="<%=columns[i][key]%>" value=""><br>
+            </div>
+    
+    
+    
+    
+            <% }   }
+}%>
+
+
+                
+                    
+                </div>
+           
+            
+            
+                <div id = "newcontrols" class = "width100 flex ">
+                <input class = "width40 height20 block overlayinputinputbutton position-relative blockcentral" id = "insert" type="button" value="Create <%= subject%> ">
+                <input class = "width40 height20 block overlayinputinputbutton position-relative blockcentral" id = "clear" type="button" value="Clear ">
+            </div>
+
+            <div id = "updatecontrols" class = "width100 flex ">
+                <input class = "width40 height20 block overlayinputinputbutton position-relative blockcentral" id = "update" type="button" value="update <%= subject%> ">
+                <input class = "width40 height20 block overlayinputinputbutton position-relative blockcentral" id = "delete" type="button" value="delete <%= subject%> ">
+            </div>
+        </form>
+        </div>  
+           
+
+
+
+</div>
+
+
+
+       <script >
+
+        var route =  "<%- routevar %>";
+        console.log(route);
+       var subjectlist = <%- JSON.stringify(subjectlist) %>;
+       var columns = <%-  JSON.stringify(columns) %>;
+      
+</script>
+
+
+        <script src="/JS/BookAdminRadio.js"></script>
+
+        <script src="/JS/AuthorsPost.js"></script>
+
+
+
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

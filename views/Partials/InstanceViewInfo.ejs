@@ -1,0 +1,53 @@
+
+
+    
+
+
+
+<div class = "flex width100 flexcolumn height80 rowgapsmall flexcentralalign ">
+  
+
+    <form class = " width100 height100 flex flexcolumn   flexcentralalign rowgap5" id="InstanceInformation">
+        <p id ="PageID"> Page ID: <%=PageID%> </p>
+
+        <% for (i = 0 ; i <= (Datafields.length - 1); i++) {  console.log(Datafields.length)%>
+
+
+    <div class="input-wrapper width80 height33 block">
+        <label for="<%=Datafields[i]%>"><%=Datafields[i]%></label><br>
+        <input  class="overlayinputText height100 width100" type="text" id="UserName" value="<%=Datavalues[i]%>"><br>
+    </div>
+
+
+    <%    }%>
+   
+
+
+  
+</form>
+<input class = "width100 block overlayinputinputbutton position-relative" id = "UpdateButton" type="Button" value="Update">
+<div class = "flex width100 colgapsmall flexcentralalign" >
+    <input class = "width50 block overlayinputinputbutton position-relative" id = "DeleteButton" type="Button" value="Delete">
+    <input class = "width50 block overlayinputinputbutton position-relative" id = "Edit_Credentials" type="Button" value="Credentials">
+
+  
+
+</div>
+
+
+</div>
+       
+
+
+
+</div>
+
+
+
+
+<script src="JS/Fadescript.js"></script>
+
+<script src="JS/UpdateViewInstance.js"></script>
+
+
+

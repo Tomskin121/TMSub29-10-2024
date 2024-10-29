@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "   ">
+    <%- include('../partials/banner'); %>
+
+    <%if (userinfo.isloggedin == true) {%>
+
+        <div class = "width100 height10 block flexcentralalign">
+            <h1 class = "block width100 textaligncenter smalllinehight" > Purchase a Course</h1>
+            <p class = "block width100 textaligncenter smalllinehight" > </p>
+        </div>
+
+
+
+
+<div class = "width100 flex height150 colgapsmall ">
+
+  
+<div class = "textcolorprimary width60  height90   flex justifycentral  ">
+
+<form class = "colorSecondary width70   block ">
+
+
+
+    <div class = "width100 ">
+            <h3  class = "colorPrimary width100 ">  Payment Method</h3>    
+            
+            <div class="width90 height40 position-relative no-wrap flex  colgapsmall flexcentralalign ">
+       
+     
+                <label class="radio block position-relative width40 height100 textaligncenter">
+                    <input class = "PaymentMethod width100 height100 displaynone flex radioselector" type="radio" name="address" checked value = 1 >
+                    <p class="content  width90 height100">  <strong>Use a previously used payment method</strong></p>
+                  </label>
+              
+                  <label class="radio block position-relative width40 height100 textaligncenter">
+                      <input class = "PaymentMethod width100 height100 displaynone flex radioselector" type="radio" name="address" value = 2 >
+                      <p class="content  width90 height100">  <strong>Use a new Payment method </strong> <br/></p>
+                    </label>
+             </div>
+            </div>
+
+            <div class = " previouspaymentitems width100 flex flexcentralalign flexcolumn">
+                <div class="input-wrapper width80 height30">
+                    <label class = "zindex102" for="UserName"></label><br>
+                    <select class = "overlayinputText width100 zindex101" name="BillingDropDown" id="BillingDropDown">
+                        <option value="none" disabled selected> Previously used Billing addresses</option>
+                        <% shippinglist.forEach((shipping) => { %>
+                            <option value="<%= shipping.BillingID %>"><%= shipping.Customer_NameOnCard%>  (<%= shipping.Customer_CardNumber%>)</option> 
+                            <% })%>
+                      </select>
+                </div>    
+
+</div>
+                <div class = "newpayment width100 flexcolumn flex flexcentralalign">
+                    <div class="input-wrapper width80 height33 block">
+                        <label class =" textcolorsecondary" for="cardname">Full Name on Card</label><br>
+                        <input  class="overlayinputText height100 width100" type="text" id="cardname" value=""><br>
+                    </div>
+            
+                    
+                    <div class="input-wrapper width80 height33 block">
+                        <label class =" textcolorsecondary" for="cardnumber">Card Number</label><br>
+                        <input  class="overlayinputText height100 width100" type="text" id="cardnumber" value=""><br>
+                    </div>
+                
+                    <div class="input-wrapper width80 height33 block">
+                        <label class =" textcolorsecondary" for="cardCVV">Card CVV</label><br>
+                        <input  class="overlayinputText height100 width100" type="text" id="cardCVV" value=""><br>
+                    </div>
+                    
+                    
+                </div>
+           
+            
+                <div class = "width100 ">
+                <input class = "width40 height20 block overlayinputinputbutton position-relative blockcentral" id = "bookingsubmit" type="Submit" value="Confirm booking">
+            </div>
+            </form>
+
+
+
+</div>
+
+
+<div class = "  width40 height100 flexcolumn colorSecondary"> 
+    <div class = "  width100 block">
+        <h3 class = "colorPrimary width100 textcolorprimary"> Order Summary</h3>    
+<div class = " marginleft5 flex flexcolumn">
+       
+    <%
+    var childtotal = Number(ChildQuantity) *   Number(EventList[0].Course_ChildPrice)
+    var Adulttotal = Number(AdultQuantity) *   Number(EventList[0].Course_AdultPrice)
+    var concessiontotal = Number(ConcessionQuantity) *   Number(EventList[0].Course_ConcessionPrice)
+    var subtotal = childtotal + Adulttotal + concessiontotal
+    %>
+    
+    <p><strong> <%=EventList[0].CourseName%> - <%=EventList[0].Date%> </strong> </p>
+    <p>Course Reference: <%=EventList[0].Course_InstanceID%> </strong> </p>
+        <p> <%= ChildQuantity %> x Children (£<%=EventList[0].Course_ChildPrice%>) </p>
+        <p><%= AdultQuantity %> x Adult (£<%=EventList[0].Course_AdultPrice%>) </p>
+        <p><%= ConcessionQuantity %> x Concession (£<%=EventList[0].Course_ConcessionPrice%>) </p> 
+
+        <p class = "textalignright marginright15"><strong> sub Total:  </strong>£<%=subtotal%> </p> 
+        <p class = "textalignright marginright15"> <strong>Tax: </strong> £<%= subtotal * 0.2 %> </p> 
+        <p class = "textalignright marginright15"> <strong>Total: </strong>  £<%= subtotal * 1.2 %> </p> 
+    </div>
+    </div>
+</div>
+
+
+
+        <%
+    var childtotal = Number(ChildQuantity) *   Number(EventList[0].Course_ChildPrice)
+    
+    } %>
+        </div>
+       
+
+
+
+
+
+
+        
+</body>
+
+<footer>
+ 
+</footer>
+
+<script>
+ var courseref = "<%=EventList[0].Course_InstanceID%>"
+ var childtotal ="<%= ChildQuantity %>"
+    var Adulttotal ="<%= AdultQuantity %>"
+    var concessiontotal = "<%= ConcessionQuantity %>"
+ </script>
+<script   src="/JS/CourseRadio.js"></script>
+
+</html>

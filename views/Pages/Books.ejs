@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden height100">
+    <%- include('../partials/banner'); %>
+
+
+    <%if (userinfo.userlevel == "Admin\r") {%>
+
+        <a href="/admin" class="block overlayinputinputbutton anchorbutton">Admin</a>
+   
+        <%  }%>
+
+        <div class = "width100 height10 block flexcentralalign">
+            <h1 class = "block width100 textaligncenter smalllinehight" > Books</h1>
+            <p class = "block width100 textaligncenter smalllinehight" >  Browse our online book store</p>
+        </div>
+
+        <div class = "flex width100 height100 colgapsmall">
+        <div id ="ContentContainer" class = "flex wrap width60 height100  padtop2">
+          
+  
+           
+            <% booklist.forEach((Book) => {  %>   
+   
+<div class = "width15 height30 colorPrimary block colorSecondary dropshadow">
+
+    <div class = "flex flexcolumn no-wrap width100 height100 ">
+<div class = "block width100 height50 colorPrimary ">
+  
+</div>
+<h3 class="block width100 textaligncenter height10  smalllinehight  BookName marginbottom booktitletext " ><%=Book.Book_Name%></h3>
+<p class = "block width100 height5  textaligncenter padleft  booktitletext"><%=Book.Book_author_FirstName%>  <%=Book.Book_Author_SurName%></p>
+<p class = "block width100 height5  textaligncenter padleft bookid booktitletext"> <%=Book.Book_ID%></p>
+<div class = "flex width100 height10  no-wrap flexcentralalign">
+<p class = "block width50  textaligncenter padleft price booktitletext">£<%=Book.Book_UnitPrice%></p>
+<p class = "block width50  textaligncenter padleft booktitletext"><%=Book.Book_Quantity%> left</p>
+
+
+</div>
+<div class = "flex width100 height20 flexcentralalign">
+<input class = "width60  block overlayinputinputbutton position-relative padauto addtocart booktitletext" id = "addtocart" type="Button" value="Add">
+</div>
+</div>    
+
+</div>
+<% }) %> 
+        
+        </div>
+<div  class = "flex flexcolumn width20     sticky "> 
+    <div id = "shoppingcart" class = "flex flexcolumn justifycontent width100   ">
+        <%- include('../partials/Shoppingcart'); %>
+</div>
+<div class ="flex  justifycontent width100">
+<input class = "width60  block overlayinputinputbutton position-relative padauto Checkout booktitletext" id = "Checkout" type="Button" value="Checkout">
+</div>
+</div>
+        
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+        <script src="JS/ShoppingCart.JS"></script>
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

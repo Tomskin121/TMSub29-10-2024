@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden height100">
+    <%- include('../partials/banner'); %>
+
+
+    <%if (userinfo.userlevel == "Admin\r") {%>
+        <input class = " block overlayinputinputbutton anchorbutton" id = "MagazineAdmin" type="Button" value="Admin">
+        <%  }%>
+
+
+
+     
+
+        <div id ="ContentContainer" class = "flex   rowgapsmall flexcentralalign width100 vh100   ">
+           
+  
+<div class = "flex flexcolumn width60 height80 justifycentral margin0  colorSecondary">
+    <h3 class = "marginleft5 margin0  block  colorSecondary textalignleft"><%=EventList[0].Date%></h3>
+          
+    <h1 class = "width100 block  marginleft5 margin0 coursetitletext textalignleft  "><%=EventList[0].CourseName%></h1>
+            <p id="ref" class = "marginleft5  block textalignleft courseRef width100">  <%=EventList[0].Course_InstanceID%></p>
+          
+            
+           
+            <h2 class = "width100 block  marginleft5 margin0 coursetitle textalignleft  ">About The Course</h2>
+   
+            <p class = "marginleft5 margin0  block   width100 textalignleft">Date: <%=EventList[0].Date%> <%=EventList[0].StartTime%> </p>
+           <p class = "marginleft5 margin0  block   width100 textalignleft coursedesc"> <%=EventList[0].Course_Description%></p>
+
+           <h2 class = "width100 block  marginleft5 margin0 coursetitle textalignleft  ">Prices</h2>
+
+           <%if (userinfo.isloggedin == true) {%>
+            <div class = "flex width60 height30 marginbottom  margin0 marginleft5">
+<div class ="width60 height100">
+
+    <div class = "flex width100 height30">
+    <p class = "width50 block alignvertically  textalignright height80"> Child £<%=EventList[0].Course_ChildPrice%></p>
+    <select name="childQuantity" id="childQuantity" class ="marginleft5 coursedropdown height80 ">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+</div>
+
+<div class = "flex width100 height30">
+    <p class = "width50 block alignvertically  textalignright height80"> Adult £<%=EventList[0].Course_AdultPrice%></p>
+    <select name="AdultQuantity" id="AdultQuantity" class ="marginleft5 coursedropdown height80 ">
+        <option selected value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+
+    </div>
+
+    <div class = "flex width100 height30">  
+    <p class = "width50 block alignvertically  textalignright height80"> Concession £<%=EventList[0].Course_ConcessionPrice%></p>
+    <select name="ConcessionQuantity" id="ConcessionQuantity" class ="marginleft5 coursedropdown height80 ">
+        <option selected value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+</div>
+
+         
+           
+        </div>
+        <input class = "margintop5 width40 height60 block overlayinputinputbutton position-relative marginright5 BookCourse" id = "BookCourse" type="Button" value="Book Now">
+        <% }
+        
+        else{%>
+            <div class = "flex width60 height20 marginbottom  margin0 marginleft5">
+                <div class ="width40 height100">
+                    <p class = "width50 block  textalignright "> Child £<%=EventList[0].Course_ChildPrice%></p>
+                    <p class = "width50 block  textalignright "> Adult £<%=EventList[0].Course_AdultPrice%></p>
+                    <p class = "width50 block  textalignright "> Concession £<%=EventList[0].Course_ConcessionPrice%></p>
+                </div>
+                   
+                        </div>
+                        
+                        <a href="/login" class="width40 height10 buttonlink  textaligncenter">Login to book</a>
+            <% }%>
+        </div>
+      
+     
+
+        </div>
+
+
+
+        <script src="/JS/courseinfo.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

@@ -1,0 +1,199 @@
+@import url("https://use.typekit.net/epb8fqd.css");
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    margin: 0px;
+    width: 100%;
+    font-family: "source-sans-pro", serif;
+    font-weight: 900;
+    font-style: normal;
+   
+    
+}
+
+#Title{
+    height: 10%;
+    margin: 0px;
+    background-color: #131E29;
+}
+
+#Title h2{
+    display: block;
+   margin:auto;
+   font-size:1.7vw;
+   color: white;
+}
+
+
+#TrainTimetable {
+    
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2%;
+    height:90% ;
+    overflow:hidden;
+    scroll-behavior: smooth;
+    padding: 0px;
+    flex: 0 0 auto;
+background-color: #131E29;
+margin: auto;
+
+}
+
+#TrainTimetable li {
+    list-style-type: none;
+    text-align: left;
+    font-size: 1.3vw;
+   display: flex;
+   flex-direction: row;
+    height:15% ;
+    flex-basis: 100%;
+    flex: 0 0 auto;
+    background-color: #424B54;
+
+}
+#TrainTimetable li div{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+#TrainTimetable li p{
+    line-height:normal;
+    margin:0px;
+    color:#ffc64a;
+        background-color: #424B54;
+}
+h1{
+    font-size: 4vw;
+    font-weight: normal;
+}
+
+#clock h1{
+    font-size: 12vw;
+    font-weight: normal;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    line-height: 12vh;
+    
+}
+
+#spinner{
+    height: 70vh;
+}
+
+h2{
+    font-size: 4vw;
+    font-weight: normal;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+}
+
+.imagecontainer{
+    width: 100%;
+    padding-top: 5%;
+}
+
+img{
+    width: 100%;
+
+}
+
+.AlignTextCenter{
+text-align: center;
+}
+
+.AlignTextRight{
+    text-align: end;
+}
+.width60{
+width: 60vw;
+}
+
+
+.height100{
+    height: 100%;;
+}
+
+.height30{
+    height: 30%;
+}
+#generalinformation
+{
+    height: 75vh;
+    position: relative;
+}
+#Baseinformation{
+    height: 20vh;
+    justify-content: center;
+position: relative;
+}
+#logo{
+    padding-right: 2%;
+}
+
+
+#digital-poster h1{
+    display: block;
+    margin:auto;
+}
+
+#traintimes{
+    background-color: #131E29;
+}
+.width40{
+    width: 40vw;
+    }
+.flexrow{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexcol{
+    display: flex;
+    flex-direction: column;
+}
+.rowgapsmall{
+    row-gap: 0px;
+}
+
+.heightthirds{
+    height: 33.3%;
+}
+#Footer{
+    position: fixed;
+    bottom: 0px;
+    height: 5vh;
+}
+.margin0{
+margin:0px;
+}
+.colgapsmall{
+    column-gap: 8%;
+}
+
+.width20p{
+width:25%;
+}
+
+.margin0{
+    margin: 0px;
+}
+.flexjustcontcentre{
+    justify-content: center;
+}
+.pinktest{
+    background-color: pink;
+}
+.greentest{
+    background-color: green;
+}
+.bluetest{
+    background-color: blue;
+}
+
+section{
+    width: 100vw;
+}

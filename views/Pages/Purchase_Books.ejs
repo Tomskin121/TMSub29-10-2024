@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden ">
+    <%- include('../partials/banner'); %>
+
+    
+
+        <div class = "width100 height10 block flexcentralalign">
+            <h1 class = "block width100 textaligncenter smalllinehight" > Purchase Books</h1>
+            <p class = "block width100 textaligncenter smalllinehight" > </p>
+        </div>
+
+
+<div class = "width100 flex height150 colgapsmall ">
+
+<div class = "textcolorprimary width60  height90   flex justifycentral  ">
+
+<form class = "colorSecondary width70   block ">
+
+
+
+
+    <div id ="Deliverysection" class = "width100 ">
+ <h3  class = "colorPrimary width100">  Delivery Address</h3>    
+      <div class="width90 height40 position-relative no-wrap flex  colgapsmall flexcentralalign ">
+       
+     
+        <label class="radio block position-relative width40 height100 textaligncenter">
+            <input class = "Deliveryaddress width100 height100 displaynone flex radioselector" type="radio" name="address" checked value = 1 >
+            <p class="content  width90 height100">  <strong>Use a previously used  address</strong></p>
+          </label>
+      
+          <label class="radio block position-relative width40 height100 textaligncenter">
+              <input class = "Deliveryaddress width100 height100 displaynone flex radioselector" type="radio" name="address" value = 2 >
+              <p class="content  width90 height100">  <strong>Use a new address </strong> <br/></p>
+            </label>
+     </div>
+    
+<div class = " previousaddresses width100 flex flexcentralalign flexcolumn">
+        <div class="input-wrapper width80 height30">
+            <label class = "zindex102" for="UserName"></label><br>
+            <select class = "overlayinputText width100 zindex101" name="DeliveryAddressDropDown" id="DeliveryAddressDropDown">
+                <option value="none" disabled selected value = "-1"> Previously used delivery addresses</option>
+                <% shippinglist.forEach((shipping) => { %>
+                    <option value="<%= shipping.ShippingID %>"><%= shipping.Customer_ShippingAddress1 %></option> 
+                    <% })%>
+              </select>
+        </div>    
+
+
+<div class = "width100 flex flexcolumn prevaddress hide">
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="UserName">First Name</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="prevfirst" value=""><br>
+        </div>
+
+        
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="UserName">Second Name</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="prevsecond" value=""><br>
+        </div>
+    
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="UserName">Address 1</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="prevaddress1" value=""><br>
+        </div>
+        
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="UserName">Address 2</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="prevaddress2" value=""><br>
+        </div>
+        
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="UserName">PostCode</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="prevpostcode" value=""><br>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class = "noaddress width100 flex flexcolumn flexcentralalign hide">
+
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="NewFirstName">First Name</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="NewFirstName" value=""><br>
+        </div>
+
+        
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="NewSecondName">Second Name</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="NewSecondName" value=""><br>
+        </div>
+    
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="address1">Address 1</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="address1" value=""><br>
+        </div>
+        
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="address2">Address 2</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="address2" value=""><br>
+        </div>
+        
+        <div class="input-wrapper width80 height33 block">
+            <label class =" textcolorsecondary" for="postcode">PostCode</label><br>
+            <input  class="overlayinputText height100 width100" type="text" id="postcode" value=""><br>
+        </div>
+
+    </div>
+</div>  
+
+
+    <div class = "width100 ">
+            <h3  class = "colorPrimary width100">  Payment Method</h3>    
+            
+            <div class="width90 height40 position-relative no-wrap flex  colgapsmall flexcentralalign ">
+       
+     
+                <label class="radio block position-relative width40 height100 textaligncenter">
+                    <input class = "PaymentMethod width100 height100 displaynone flex radioselector" type="radio" name="address1" checked value = 1 >
+                    <p class="content  width90 height100">  <strong>Use a previously used payment method</strong></p>
+                  </label>
+              
+                  <label class="radio block position-relative width40 height100 textaligncenter">
+                      <input class = "PaymentMethod width100 height100 displaynone flex radioselector" type="radio" name="address1" value = 2 >
+                      <p class="content  width90 height100">  <strong>Use a new Payment method </strong> <br/></p>
+                    </label>
+             </div>
+            </div>
+
+            <div class = " previouspaymentitems width100 flex flexcentralalign flexcolumn">
+                <div class="input-wrapper width80 height30">
+                    <label class = "zindex102" for="UserName"></label><br>
+                    <select class = "overlayinputText width100 zindex101" name="BillingDropDown" id="BillingDropDown">
+                        <option value="none" disabled selected> Previously used Billing addresses</option>
+                        <% billinglist.forEach((shipping) => { %>
+                            <option value="<%= shipping.BillingID %>"><%= shipping.Customer_NameOnCard%>  (<%= shipping.Customer_CardNumber%>)</option> 
+                            <% })%>
+                      </select>
+                </div>    
+
+</div>
+                <div class = "newpayment width100 flexcolumn flex flexcentralalign">
+                    <div class="input-wrapper width80 height33 block">
+                        <label class =" textcolorsecondary" for="cardname">Full Name on Card</label><br>
+                        <input  class="overlayinputText height100 width100" type="text" id="cardname" value=""><br>
+                    </div>
+            
+                    
+                    <div class="input-wrapper width80 height33 block">
+                        <label class =" textcolorsecondary" for="cardnumber">Card Number</label><br>
+                        <input  class="overlayinputText height100 width100" type="text" id="cardnumber" value=""><br>
+                    </div>
+                
+                    <div class="input-wrapper width80 height33 block">
+                        <label class =" textcolorsecondary" for="cardCVV">Card CVV</label><br>
+                        <input  class="overlayinputText height100 width100" type="text" id="cardCVV" value=""><br>
+                    </div>
+                    
+                    
+                </div>
+           
+               
+            
+                <div class = "width100 ">
+                <input class = "width40 height20 block overlayinputinputbutton position-relative blockcentral" id = "Purchase" type="Submit" value="Purchase Books">
+            </div>
+            </form>
+
+
+
+</div>
+
+
+<div class = "width40 height100 flexcolumn colorSecondary"> 
+    <div class = "width90 block">
+        <%- include('../partials/Shoppingcart'); %>
+
+</div>
+        
+        </div>
+
+       
+
+        <script src="/JS/BooksRadio.js"></script>
+
+
+
+
+
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

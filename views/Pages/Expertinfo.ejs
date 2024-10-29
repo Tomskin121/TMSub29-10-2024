@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden height100">
+    <%- include('../partials/banner'); %>
+
+
+    <%if (userinfo.userlevel == "Admin\r") {%>
+        <input class = " block overlayinputinputbutton anchorbutton" id = "MagazineAdmin" type="Button" value="Admin">
+        <%  }%>
+
+
+
+     
+
+        <div id ="ContentContainer" class = "flex   rowgapsmall flexcentralalign width100 vh100   ">
+           
+  
+<div class = "flex flexcolumn width60 height80 justifycentral margin0  colorSecondary">
+    <h3 class = "marginleft5 margin0  block  colorSecondary textalignleft"><%=EventList[0].Date%></h3>
+          
+    <h1 class = "width100 block  marginleft5 margin0 coursetitletext textalignleft  "><%=EventList[0].Expert_EventName%></h1>
+            <p id="ref" class = "marginleft5  block textalignleft courseRef width100">  <%=EventList[0].Expert_EventID%></p>
+          
+            
+           
+            <h2 class = "width100 block  marginleft5 margin0 coursetitle textalignleft  ">About The event</h2>
+   
+            <p class = "marginleft5 margin0  block   width100 textalignleft">Date: <%=EventList[0].Date%> <%=EventList[0].StartTime%> </p>
+           <p class = "marginleft5 margin0  block   width100 textalignleft coursedesc"> <%=EventList[0].Expert_Description%></p>
+
+          
+
+           <%if (userinfo.isloggedin == true) {%>
+           <div class = "flex width100 height10 flexcentralalign margintop5">
+        <input class = "margintop5 width40 height100 block overlayinputinputbutton position-relative marginright5 BookExpertTalk" id = "BookExpertTalk" type="Button" value="Book Now">
+    </div>
+        <% }
+        
+        else{%>  
+                        <a href="/login" class="width40 height10 buttonlink  textaligncenter">Login to book</a>
+            <% }%>
+        </div>
+      
+     
+
+        </div>
+
+
+
+        <script src="/JS/Expertinfo.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

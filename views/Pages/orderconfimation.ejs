@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden height100 ">
+    <%- include('../partials/banner'); %>
+
+
+        <div class = "width90 height80 textcolorsecondary block">
+<h3 class ="textcolorsecondary">Order Number <%= subscriptioninfo.Subscription_ID %></h3>
+<p class ="textcolorsecondary"> customer Email :  <%= subscriptioninfo.Customer_Email %> </p>
+
+
+<p class ="textcolorsecondary">order detail</p>
+
+<ul>
+    <li class ="textcolorsecondary"><%= subscriptioninfo.Magazine_Name %></li>
+    <li class ="textcolorsecondary">Frequency <%= subscriptioninfo.Magazine_Frequency %></li>
+    <li class ="textcolorsecondary">Subscription type <%= subscriptioninfo.Subscription_length %></li>
+    <li class ="textcolorsecondary">Subscription Start <%= subscriptioninfo.StartDate %></li>
+    <li class ="textcolorsecondary">Subscription end <%= subscriptioninfo.endDate %></li>
+</ul>
+
+<% if( subscriptioninfo.Subscription_DeliveryMethod ="Physical" ){ %>
+<p class ="textcolorsecondary"> delivery address</p>
+<ul>
+    <li class ="textcolorsecondary"><%= subscriptioninfo.deliveryName%></li>
+    <li class ="textcolorsecondary"><%= subscriptioninfo.Customer_ShippingAddress1%></li>
+    <li class ="textcolorsecondary"><%= subscriptioninfo.Customer_ShippingPostcode%></li>
+</ul>
+<%}  else{ %>
+        <p class ="textcolorsecondary"> Email Delivery address <%= subscriptioninfo.Customer_Email%></p>
+        <%} %>
+        </div>
+
+
+
+
+
+
+
+  
+</body>
+
+<footer>
+ 
+</footer>
+
+
+
+
+</html>

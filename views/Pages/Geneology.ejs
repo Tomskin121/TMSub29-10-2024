@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  margin0 overflowhidden  height100">
+    <%- include('../partials/banner'); %>
+
+
+   
+    <%if (userinfo.userlevel == "Admin\r") {%>
+        <input class = " block overlayinputinputbutton anchorbutton" id = "MagazineAdmin" type="Button" value="Admin">
+        <%  }%>
+
+
+        <div class = "width100 height10 block flexcentralalign marginbottom">
+            <h1 class = "block width100 textaligncenter smalllinehight" > Geneaology</h1>
+            <p class = "block width100 textaligncenter smalllinehight" > Find out about your past </p>
+        </div>
+
+        <div id ="ContentContainer" class = "flex  colgapsmall flexJustifyCentral width100 height70  nowrap ">
+          
+   <div class = "width30 height90 flex flexcolumn flexcentralalign  colorSecondary dropshadow">
+    <h2 class = "block height5 width100 textaligncenter "> Geneaology Service </h2>
+    <div class = "block width100 height40 colorPrimary"></div>
+    <p class = " height30  margin-bottom block width90 textaligncenter"> 
+       Our history specialists are offering specilised bespoke research into Family, war and general research enquires,
+       we have access to repositorys around the world and are offering online or in person appointments at one of our
+       research hubs.
+    </p>
+
+    <div class = "width100 height20 flex flexcentralalign">
+        <%if (userinfo.isloggedin == false) {%>
+        <a href="/login" class="width80 height60  buttonlink  textaligncenter">Log in to begin</a>
+        <% }%>
+    </div>
+
+</div>
+<%if (userinfo.isloggedin == true) {%>
+<div class = "width30 height90 flex flexcolumn flexcentralalign  colorSecondary dropshadow">
+    <h2 class = "block height5 width100 textaligncenter "> Request a Geneology appointment </h2>
+    <div class = "flex flexcolumn flexcentral width100 height70 rowgapsmall border-box">
+       
+       
+        <div class="input-wrapper width80 height30">
+            <label class = "zindex102" for="UserName"></label><br>
+            <select class = "overlayinputText width100 zindex101" name="GeneologySubjects" id="GeneologySubjects">
+                <option value="none" disabled selected> select a Subject</option>
+                <% GeneologySubjects.forEach((GeneologySubjects) => { %>
+                
+                    <option value="<%= GeneologySubjects.Genealogy_Subject %>"><%= GeneologySubjects.Genealogy_Subject %></option>
+                    
+                    <% })%>
+              </select>
+        </div>    
+
+        
+        <div class="input-wrapper width80  height30 ">
+            <label class = "zindex102" for="UserName"></label><br>
+            <select class = "overlayinputText width100 zindex101" name="GeneologySubjects" id="GeneologySubjects">
+                <option value="none" disabled selected> select a Meeting method</option>
+                <% meetmethods.forEach((meetmethod) => { %>
+                
+                    <option value="<%= GeneologySubjects.Genealogy_Subject %>"><%= meetmethod.Genealogy_MeetMethod %></option>
+                    
+                    <% })%>
+              </select>
+        </div>  
+        <div class="input-wrapper width80  height60 border-box">
+            <label class = "zindex102" for="UserName"></label><br>
+            <textarea  class="overlayinputText  width100 height100 zindex101" placeholder="Enter your request."  id="pageorder" value=""></textarea>
+                
+              </select>
+        </div>  
+    
+    </div>
+   
+   
+
+
+<div class = "width100 height20 flex flexcentralalign">
+    <a href="/ExpertEvents" class="width80 height60  buttonlink  textaligncenter">Request an appointment</a>
+</div>
+</div>
+
+<% } %>
+        </div>
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

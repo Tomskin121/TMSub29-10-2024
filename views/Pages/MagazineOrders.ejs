@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  margin0   height100">
+    <%- include('../partials/banner'); %>
+
+  
+
+
+        <div id ="ContentContainer" class = "flex flexcentralalign flexcolumn heightauto rowgap10 width100   ">
+       <h1 class = "textaligncenter">Your Subscriptions</h1>
+            
+       <% orderlist.forEach((order) => {  %>     
+<div class = "flex width80 colorSecondary vh15 marginbottom">
+
+    <div class = "block width40 height100">
+<h3 class = "margin0">order number: <%= order.Subscription_ID %></h3>
+<h3 class = "">Magazine Name: <%= order.Magazine_Name %></h3>
+<p>subscription start Date: <%= order.StartDate %></p>
+<p>Subscription renewal Date: <%= order.endDate %></p>
+</div>  
+        
+        </div>
+
+<% } ) %>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<footer>
+ 
+</footer>
+
+</body>
+
+
+</html>

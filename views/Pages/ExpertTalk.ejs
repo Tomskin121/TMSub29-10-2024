@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+
+<header>
+
+</header>
+<body class = "  overflowxhidden height100">
+    <%- include('../partials/banner'); %>
+
+
+    <%if (userinfo.userlevel == "Admin\r") {%>
+        <input class = " block overlayinputinputbutton anchorbutton" id = "MagazineAdmin" type="Button" value="Admin">
+        <%  }%>
+
+
+
+          
+        <div class = "width100 height10 block flexcentralalign">
+            <h1 class = "block width100 textaligncenter smalllinehight" > Courses</h1>
+            <p class = "block width100 textaligncenter smalllinehight" > Browse our Courses</p>
+        </div>
+        <div id ="ContentContainer" class = "flex  rowgapsmall flexcentral width90 height100  wrap ">
+            <% listEvents.forEach((Event) => {  %>   
+  
+     <div class ="width45 height30 rowgapsmall margin0 flex colorSecondary dropshadow">
+
+        <div class = "width40 height100 block colorPrimary"></div>
+
+
+        <div class = "width60 height100  flexcentral flex flexcolumn">
+
+            <h1 class = "width90 block height20 colorSecondary textaligncenter courseTitle"><%=Event.Expert_EventName%></h1>
+            <p class = "courseRef"> <%=Event.Expert_EventID%></p>
+            <h3 class = "width90 block height20 colorSecondary textaligncenter"><%=Event.Expert_Date%> <%=Event.Expert_Time%> </h3>
+           <p class = "width90 block height60 textaligncenter coursedesc"> <%=Event.Expert_Description%></p>
+
+
+           <div class = "flex width100 height30 marginbottom flex-end ">
+<div class ="width60 height100">
+    
+</div>
+
+            <input class = "margintop5 width40 height60 block overlayinputinputbutton position-relative marginright5 moreinfo" id = "addview" type="Button" value="More info">
+            </div>
+
+
+        </div>
+     </div>  
+     
+     <% }) %> 
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="JS/Expertinfo.js"></script>
+
+</body>
+
+<footer>
+ 
+</footer>
+
+
+
+
+</html>
